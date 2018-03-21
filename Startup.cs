@@ -15,7 +15,7 @@ namespace CityInfo.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            Console.WriteLine("")
+           
 
         }
 
@@ -27,9 +27,9 @@ namespace CityInfo.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run((context) =>
+            app.Run(async (context) =>
             {
-                throw new Exception("Example exception");
+                await context.Response.WriteAsync("Hello World!");
             });
         }
     }
